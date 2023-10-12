@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">TrackMyCal</string>
+    <array name="weightUnits">
+        <item>Kg</item>
+        <item>lbs</item>
+    </array>
+    <array name="dietGoals">
+        <item>Choose your diet goal</item>
+        <item>Cutting</item>
+        <item>Bulking</item>
+        <item>Maintaning</item>
+    </array>
+    <array name="cal_types">
+        <item>Type of Calories In</item>
+        <item>Breakfast</item>
+        <item>Lunch</item>
+        <item>Dinner</item>
+        <item>Snack</item>
+    </array>
+    <array name="duration">
+        <item>hours</item>
+        <item>minutes</item>
+    </array>
+</resources>

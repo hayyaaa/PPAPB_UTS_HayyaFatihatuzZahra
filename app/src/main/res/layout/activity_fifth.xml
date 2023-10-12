@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".FifthActivity">
+
+            <TextView
+                android:id="@+id/textViewInputData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Input Data"
+                android:textSize="40sp"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/green"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/radioGroupType"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Jenis Kalori In/Out -->
+            <RadioGroup
+                android:id="@+id/radioGroupType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/textViewInputData"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp">
+
+                <RadioButton
+                    android:id="@+id/radioButtonIn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="Calorie In"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonOut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Calorie Out"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="16sp"
+                    android:checked="true" />
+            </RadioGroup>
+
+            <!-- Form Kalori In -->
+            <LinearLayout
+                android:id="@+id/layoutCaloriesIn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroupType"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp">
+
+                <EditText
+                    android:id="@+id/edit_txt_foodName"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dp"
+                    android:layout_marginTop="8dp"
+                    android:hint="Food Name"
+                    android:fontFamily="@font/poppins_light"
+                    android:padding="10dp"
+                    android:background="@drawable/border_outline"/>
+
+                <TextView
+                    android:id="@+id/txt_mealTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="Meal Time"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/poppins_light"
+                    android:background="@drawable/border_outline"
+                    android:padding="10dp" />
+
+                <TimePicker
+                    android:id="@+id/timePickerMealTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:timePickerMode="spinner"
+                    android:background="@drawable/background_picker"/>
+
+                <Spinner
+                    android:id="@+id/spinnerCalorieType"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dp"
+                    android:entries="@array/cal_types"
+                    android:padding="10dp"
+                    android:background="@drawable/border_outline"/>
+
+                <EditText
+                    android:id="@+id/edit_txt_calories"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dp"
+                    android:layout_marginTop="8dp"
+                    android:hint="Number of Calories"
+                    android:inputType="number"
+                    android:padding="10dp"
+                    android:background="@drawable/border_outline"/>
+
+            </LinearLayout>
+
+            <!-- Form Kalori Out -->
+            <LinearLayout
+                android:id="@+id/layoutCaloriesOut"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroupType"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp">
+
+                <EditText
+                    android:id="@+id/edit_txt_workoutName"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dp"
+                    android:layout_marginTop="8dp"
+                    android:hint="Workout Name"
+                    android:fontFamily="@font/poppins_light"
+                    android:padding="10dp"
+                    android:background="@drawable/border_outline"/>
+
+                <EditText
+                    android:id="@+id/edit_txt_workoutStart"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dp"
+                    android:layout_marginTop="8dp"
+                    android:hint="Workout Start"
+                    android:inputType="time"
+                    android:padding="10dp"
+                    android:background="@drawable/border_outline"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <EditText
+                        android:id="@+id/edit_txt_duration"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:layout_weight="0.6"
+                        android:layout_marginEnd="8dp"
+                        android:hint="Workout Duration"
+                        android:fontFamily="@font/poppins_light"
+                        android:padding="10dp"
+                        android:inputType="numberDecimal"
+                        android:background="@drawable/border_outline"/>
+
+                    <Spinner
+                        android:id="@+id/spinnerDuration"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:layout_weight="1"
+                        android:entries="@array/duration"
+                        android:padding="10dp"
+                        android:background="@drawable/border_outline"/>
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/edit_txt_caloriesBurned"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dp"
+                    android:layout_marginTop="8dp"
+                    android:hint="Calories Burned"
+                    android:inputType="number"
+                    android:padding="10dp"
+                    android:background="@drawable/border_outline"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/green"
+                android:layout_marginTop="50dp"
+                android:text="Save"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
